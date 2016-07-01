@@ -7,15 +7,15 @@ get_header();
 <section class="contact-us">
 <div class="container">
 <div class="contact-heading">
-<h1>CONTACT US</h1>
+<h1><?php the_field('page_title',8)?></h1>
 </div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="contact">
 				<div class="contact-left">
-					<form role="form" class="contact-form ">
-					
-						<div class="form-group has-feedback">
+
+					<?php echo do_shortcode( '[contact-form-7 id="13" title="Contact form 1"]' ); ?>
+						<!--<div class="form-group has-feedback">
 						<span class="fa fa-user" aria-hidden="true"></span>
 							<input type="name" class="form-control" id="contact-name"  placeholder="Your Name*">
 						</div>
@@ -43,19 +43,19 @@ get_header();
 							
 								<div class="form-group">
 									<div class="col-sm-offset-2 col-sm-10">
-
+										<button type="submit" class="submit-contact-btn">SUBMIT</button>
 									</div>
-								</div>
-					</form>	
+								</div>-->
+
 					
 				</div>
 			
 			
 				<div class="contact-right">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/about-right-img.png">
+					<?php the_post_thumbnail();?>
 				</div>
 			</div>
-				<button type="submit" class="submit-contact-btn">SUBMIT</button>
+				
 		</div>
 	</div>
 	</div>

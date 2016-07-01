@@ -21,14 +21,9 @@ get_header();
 					<div class="thesis-right-inner">
 						<h2><?php the_field('the_thesis_title',6)?></h2>
 						
-						<p class="para1"><?php the_field('paragraph_1',6)?></p>
-			
-							<p class="para2" ><?php the_field('paragraph_2',6)?></p>
-				
-							<p class="para3" ><?php the_field('paragraph_3',6)?>
-						</p>
+						<p><?php the_field('thesis_content',6)?></p>
 						
-						<button type="submit" class="view-thesis-btn"><?php the_field('view_pdf_button',6)?></button>
+						<button type="submit" class="view-thesis-btn">VIEW PDF</button>
 					</div>
 				</div>
 			</div>
