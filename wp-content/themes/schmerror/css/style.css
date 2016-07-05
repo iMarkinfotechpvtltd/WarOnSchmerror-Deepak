@@ -431,6 +431,7 @@ color:#a4a4a4;
 
 input[type=email]:focus{
     color:white;
+
 }
 
 .subscribe-form input:focus{
@@ -508,6 +509,10 @@ max-width: 125px;
 width:100%;
 }
 
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus{
+    background-color: #de0000;
+}
+
 
 /*----------------------contact--------------------------*/
 
@@ -530,13 +535,9 @@ letter-spacing: 2px;
 
 .contact {
     background: rgba(241, 241, 241, 0.18);
-    padding: 30px 40px 50px;
+    padding: 30px 40px 30px;
     position: relative;
     margin-bottom: 95px
-}
-
-.wpcf7-form{
-    height: 440px;
 }
 
 .form-group {
@@ -558,7 +559,6 @@ padding-left: 40px;
 font-size: 12px;
 font-weight: normal;
 font-family: FuturaBT-Medium;
-
 }
 
 .contact input{
@@ -567,6 +567,7 @@ font-family: FuturaBT-Medium;
 
 .contact input:focus, .contact textarea:focus {
 border-color:#fff;
+    color:#fff;
 }
 
 .contact-left input:focus{
@@ -640,24 +641,63 @@ color: white;
     background-color:rgba(250, 250, 250, 0.35);
 }
 
-
-.form-control::-webkit-input-placeholder {
+.contact textarea::-webkit-input-placeholder {
 color:#fff;
-        font-family: FuturaBT-Medium;
+font-family: FuturaBT-Medium;
 }
 
-.form-control:-ms-input-placeholder {
+.contact textarea:-ms-input-placeholder {
 color:#fff;
-        font-family: FuturaBT-Medium;
+font-family: FuturaBT-Medium;
 }
 
-.form-control::-moz-placeholder{
+.contact textarea::-moz-placeholder{
 color:#fff;
-        font-family: FuturaBT-Medium;
+font-family: FuturaBT-Medium;
 }
 
-.contact-left .form-group textarea:focus{
-    border:1px solid #fff;
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea{
+    color:#fff;
+    padding: 6px 12px;
+}
+
+.contact input::-webkit-input-placeholder {
+color:#fff;
+font-family: FuturaBT-Medium;
+}
+
+.contact input:-ms-input-placeholder {
+color:#fff;
+font-family: FuturaBT-Medium;
+}
+
+.contact input::-moz-placeholder{
+color:#fff;
+font-family: FuturaBT-Medium;
+}
+
+.contact textarea:focus{
+border:1px solid #fff;
+        background-color:rgba(250, 250, 250, 0.35);
+}
+
+.contact input[type=email]:focus{
+    color:#fff;
+}
+
+
+div.wpcf7-validation-errors{
+    border:none;
+}
+
+div.wpcf7-response-output{
+    margin: 0;
+    padding:0;
+        color: cornsilk;
+}
+
+span.wpcf7-not-valid-tip{
+   display: none;
 }
 
 
@@ -700,6 +740,34 @@ z-index: 0;
 
 .contact-right img{
 width:100%;
+}
+
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus{
+    outline: none;
+outline-offset: 0;
+}
+
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors{
+display: block;
+color: white;
+background-color: red;
+margin-top: 38px; 
+position: absolute;
+font-size:12px;
+}
+
+div.wpcf7-response-output{
+margin-top: 10px;
+padding: 2px 12px;
+color: white;
+background-color: green;
+border: none;
+position: absolute;
+bottom: -69px;
+}
+
+div.wpcf7 img.ajax-loader{
+    display:none;
 }
 
 
@@ -933,7 +1001,7 @@ width: 212px;
 }
 
 /*-----------contact page--------*/
-   
+    
 .contact-left {
     width: 320px;
 }   
@@ -942,6 +1010,10 @@ width: 212px;
     right: -42px;
     width: 559px;
 }
+    
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors{
+        bottom: -78px;
+    }
 
 .submit-contact-btn {
 left: -40px;
@@ -1111,12 +1183,12 @@ ul.nav.navbar-nav.navbar-right li:nth-child(3) {
 }
 
 span.fa {
-    line-height: 77px;
+    line-height: 74px;
 }
 
     
 .contact {
-    padding: 30px 40px 0px;
+    padding: 30px 40px 35px;
     margin-bottom: 70px;
 }
 
@@ -1128,13 +1200,23 @@ span.fa {
 .contact-left textarea.form-control.comments {
     height: 110px;
 }
+    
+ div.wpcf7-response-output {
+    padding: 2px 15px;
+    font-size: 13px;
+}
 
+ .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
+bottom: -78px;
+font-size: 12px;
+}
+    
 .contact .submit-contact-btn {
-width: 190px;
- font-size: 25px;
- line-height: 45px;
- left: -40px;
-    bottom: -80px;
+    width: 190px;
+    font-size: 25px;
+    line-height: 45px;
+    left: -40px;
+bottom: -130px;
 }
 
 } 
@@ -1145,8 +1227,11 @@ width: 190px;
 .navbar-toggle {
     margin-top: 21px;
     margin-right: 0px;
-    transition: all 0.5s ease-out 0s;
-    -webkit-transition: all 0.5s ease-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
 }
     
 .navbar-brand {
@@ -1173,8 +1258,11 @@ display: block;
 	-webkit-transform: rotate(45deg);
     position: relative;
     top: 3px;
-    transition: all 0.5s ease-out 0s;
-		-webkit-transition: all 0.5s ease-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
 }
 
 .navbar-toggle span:nth-child(2){
@@ -1186,12 +1274,20 @@ display:none;
 	-webkit-transform: rotate(-45deg);
 position: relative;
 top: -3px;
-    transition: all 0.5s ease-out 0s;
-	-webkit-transition: all 0.5s ease-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
+    margin-top: 24px;
+}
+    
+    .navbar-toggle.collapsed {
+    margin-top: 21px;
 }
     
 .about {
@@ -1260,7 +1356,7 @@ ul.nav.navbar-nav.navbar-right li:nth-child(3) {
 }
     
 .about-right img {
-    width: 60%;
+    width: 100%;
 }
 
 .subscribe{
@@ -1313,8 +1409,8 @@ footer{
 }
 
 .thesis-left img {
-    width: 250px;
-    height: 350px;
+    width: 100%;
+    height: auto;
 }
 
 .thesis-right {
@@ -1343,7 +1439,7 @@ padding: 10px 8px;
 }
 
 .contact {
-    padding: 25px 20px 15px;
+    padding: 25px 20px 30px;
 	margin-bottom: 20px;
 }
 
@@ -1367,22 +1463,39 @@ padding: 10px 8px;
 
 .contact-right{
 	position: static;
-margin-top: 24px;
+margin-top: 50px;
 transform: translateY(0px);
 width: 100%;
 text-align: center;
 }
-
+    
 .contact-right img {
 	width: 415px;
 	}
+    
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
+bottom: 52px;
+font-size: 12px;
+right: 0px;
+    width:100%;
+}
+    
+div.wpcf7-response-output {
+
+    bottom: 48px;
+    width: 100%;
+}
+    
+ .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors{
+     bottom: 48px;
+}
 
 .contact .submit-contact-btn {
     width: 220px;
     font-size: 25px;
     line-height: 40px;
-	position:static;
-    margin-top: 20px;
+    position: static;
+margin-top: 31px;
 }
 
 }
@@ -1391,17 +1504,25 @@ text-align: center;
 	
 	
 @media (max-width:480px){
+   
+body {
+    margin-bottom: 46px;
+}    
     
 .navbar-brand {
     width: 230px;
 }  
 
 .navbar-toggle {
-    margin-top: 21px;
+    margin-top: 24px;
     padding: 6px 5px;
 }
     
-    .social-links li {
+.navbar-toggle.collapsed {
+    margin-top: 20px;
+}
+    
+.social-links li {
     margin-left: 0px;
 }
     
@@ -1425,13 +1546,9 @@ ul.nav.navbar-nav.navbar-right li:nth-child(2) {
     width: 130px;
 }
     
-.about-right img {
-    width: 100%;
-}
-    
 .subscribe h1 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .subscribe-form .form-control:last-child {
@@ -1449,7 +1566,7 @@ ul.nav.navbar-nav.navbar-right li:nth-child(2) {
     line-height: 35px;
     padding: 0px 0 0;
     margin-left: 0px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 footer {
@@ -1488,10 +1605,6 @@ footer {
     font-size: 30px;
 }
 
-.thesis-left img {
-    width: 190px;
-    height: 260px;
-}
 
 .thesis-right-inner h2 {
     font-size: 20px;
@@ -1513,7 +1626,7 @@ footer {
  /*-----------contact page--------*/
  
 .contact {
-    padding: 10px 15px 10px;
+    padding: 10px 15px 15px;
 }
 
 .contact-form {
@@ -1543,22 +1656,30 @@ footer {
 }
 
 span.fa {
-    line-height: 74px;
+    line-height: 75px;
 }
 
-.contact-right img {
-    width: 285px;
+.contact-right {
+    margin-top: 30px;
 }
 
+div.wpcf7-response-output {
+    bottom: 40px;
+    line-height: 14px;
+}
+    
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
+bottom: 38px;
+line-height: 14px;
+}
 
 .contact .submit-contact-btn {
     width: 150px;
     font-size: 20px;
     line-height: 35px;
 	padding:0 0 0;
-    margin-left: 15px;
+margin-top: 39px;
 }
-
 }
     
     

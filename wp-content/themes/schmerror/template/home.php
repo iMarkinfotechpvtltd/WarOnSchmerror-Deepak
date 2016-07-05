@@ -12,7 +12,7 @@ get_header();
 				
 				<?php the_field('about_author_content',4)?>
 				
-				<button type="submit" class="about-read-button"><?php the_field('read_more_button',4)?></button>
+				<a href="<?php echo get_permalink(6);?>"><button type="submit" class="about-read-button"><?php the_field('read_more_button',4)?></button></a>
 			</div>
 			
 		

@@ -23,7 +23,7 @@ get_header();
 						
 						<p><?php the_field('thesis_content',6)?></p>
 						
-						<button type="submit" class="view-thesis-btn">VIEW PDF</button>
+						<a href="<?php echo get_permalink(28);?>"><button type="submit" class="view-thesis-btn">VIEW PDF</button></a>
 					</div>
 				</div>
 			</div>
