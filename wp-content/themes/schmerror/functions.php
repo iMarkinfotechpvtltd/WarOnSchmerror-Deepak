@@ -421,3 +421,44 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 add_image_size( 'main_img', 802, 495, true );
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
+}
+function custom_books() {
+   $args = array(
+      'label' => 'Books',
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'books'),
+        'query_var' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',)
+        );
+
+    register_post_type( 'books', $args );
+}
+add_action( 'init', 'custom_books' );
+function register_session() {
+
+    if ( ! session_id() ) {
+        session_start();
+    }
+}
+
+add_action( 'init', 'register_session' );

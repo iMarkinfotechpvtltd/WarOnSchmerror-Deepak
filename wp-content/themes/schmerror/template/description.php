@@ -13,7 +13,7 @@ get_header();
 			<div class="thesis">
 				<div class="thesis-left">
 					<?php the_post_thumbnail();?>
-				
+				<a href="<?php echo get_permalink(47);?>"><button class="view-thesis-btn">BUY BOOK</button></a>
 				</div>
 				
 				

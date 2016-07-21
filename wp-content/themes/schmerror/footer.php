@@ -20,25 +20,27 @@
 </div>
 	
 </footer>
-
+<?php wp_footer();?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/wow.min.js"></script>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/form.js"></script>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.validate.js"></script>
               <script>
               new WOW().init();
               </script>
 <script>
-	$(document).ready(function(){
-    $(".navbar-toggle.collapsed").click(function(){
-        $("#myNavbar").slideToggle("slow");
-		$(".navbar-collapse collapse").toggleClass(".navbar-collapse collapse in");
+	jQuery(document).ready(function(){
+    jQuery(".navbar-toggle.collapsed").click(function(){
+        jQuery("#myNavbar").slideToggle("slow");
+		jQuery(".navbar-collapse collapse").toggleClass(".navbar-collapse collapse in");
     });
 });
 </script>
 
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/bootstrap.min.js"></script>
-	<?php wp_footer();?>
+	
   </body>
 </html>
