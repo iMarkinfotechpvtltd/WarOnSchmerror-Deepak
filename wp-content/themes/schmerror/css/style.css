@@ -855,6 +855,20 @@ margin-top: 20px;
 }
 
 
+/*--------- Product Page------- */
+
+.product1{
+    text-align: center;
+}
+
+
+
+
+
+
+
+/*-------- Responsive -------*/
+
 @media (min-width:1500px){
 	
 .container{

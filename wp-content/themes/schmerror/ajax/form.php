@@ -2,10 +2,8 @@
 include('../../../../wp-config.php');
 ?>
 <?php
+
 $name=$_GET['name'];
-//echo $name;
-//$price=$_GET['prc'];
-//echo $price;
 $email=$_GET['email'];
 $post_id=$_GET['post_id'];
 $phone=$_GET['phone'];
@@ -14,6 +12,8 @@ $country=$_GET['country'];
 $state=$_GET['state'];
 $city=$_GET['city'];
 $pin=$_GET['pin'];
+$price = get_field('price',$post_id);
+//echo $price;
 global $wpdb;
 $table = $wpdb->prefix."formdata";
 $wpdb->insert( $table, 
@@ -26,8 +26,9 @@ $wpdb->insert( $table,
         'country'   => $country,
 		 'state'    => $state,
 		 'city'     => $city,
+		 'amount'   => $price,
 		 'state'    => $state,
-		 'status'    =>0,
+		 'status'   => 0,
 		 'pin'      => $pin
     )
   );
