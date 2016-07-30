@@ -4,6 +4,19 @@
 */ 
 get_header();
 ?>
+<div class="thankyou">
+    <div class="container">
+        <div class="thankyou-main">
+            <div class="thankyou-tick">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <h2>Thank You!</h2>
+                <p>Your order has been placed</p>
+                <small>An email receipt including the details about your order has been sent to the email address provided . Please keep it for your record.</small>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <?php
 session_start();
@@ -30,15 +43,10 @@ foreach($result as $results)
 	$state   = $results->state;
 	$pin     = $results->pin;
 	$price   = $results->amount;
-?>
-	<div><?php echo $post_id;?></div>
-	<div><?php echo $name;?></div>
-	<div><?php echo $email;?></div>
-	<div><?php echo $phone;?></div>
-	
+?>	
 <?php
 }
-echo $date;
+//echo $date;
 $table_name = $wpdb->prefix . 'formdata';
    $wpdb->query("UPDATE $table_name SET status='1' WHERE id = '$usersession'");
 if($post_id==61)
@@ -54,7 +62,7 @@ if($post_id==61)
 						<!-- -->
 						<tr align="center" >
 							<td style="font-family:arial;  "><strong>
-							New customer details
+							Thanks for your order
 							</strong></td>
 						</tr><!-- -->
 					</table>
@@ -126,11 +134,11 @@ if($post_id==61)
     td{width:100%;}
 
 </style>';
-	wp_mail( $to, $subject, $headers, $body );
+	wp_mail( $to, $subject, $body, $headers );
 	
 	//to publisher
 	$headers = 'From: My Name <myname@mydomain.com>' . "\r\n";
-	$to='publish@gmail.com';
+	$to='deepak.kapil@imarkinfotech.com';
 	$subject = 'The subject';
 	$body = '<table cellspacing="0" border="0" align="center" cellpadding="0" width="600" style="border:1px solid">
 			<tr>
@@ -139,7 +147,7 @@ if($post_id==61)
 						<!-- -->
 						<tr align="center" >
 							<td style="font-family:arial;  "><strong>
-							Thanks for your order
+							New customer detail
 							</strong></td>
 						</tr><!-- -->
 					</table>
@@ -211,7 +219,7 @@ if($post_id==61)
     td{width:100%;}
 
 </style>';
-	wp_mail( $to, $subject, $headers, $body );
+	wp_mail( $to, $subject, $body, $headers );
 	
 }
 else
@@ -307,7 +315,7 @@ else
 	//to admin
 	$headers = 'From: My Name <myname@mydomain.com>' . "\r\n";
 	$mail_attachment = array(WP_CONTENT_DIR . '/themes/schmerror/pdf/schmerror.pdf'); 
-	$to='admin@gmail.com';
+	$to='deepak.kapil@imarkinfotech.com';
 	$subject = 'The subject';
 	$body = '<table cellspacing="0" border="0" align="center" cellpadding="0" width="600" style="border:1px solid">
 			<tr>

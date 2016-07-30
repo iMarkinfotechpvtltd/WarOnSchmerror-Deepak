@@ -14,6 +14,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
+                    <b>404</b>
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentysixteen' ); ?></h1>
 				</header><!-- .page-header -->
 
@@ -21,6 +22,7 @@ get_header(); ?>
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentysixteen' ); ?></p>
 
 					<?php get_search_form(); ?>
+                    <a href="http://schmerror.stagingdevsite.com/dev/" class="extra-page-button-home">Home page</a>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 

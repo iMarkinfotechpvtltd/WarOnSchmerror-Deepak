@@ -4,25 +4,36 @@
 */ 
 get_header();
 ?>
+<div class="products">
+<div class="container">
+	<div class="row">
  <?php
 		$args = array('post_type' => 'books',
 		'posts_per_page' => -1);
 		$loop = new WP_Query( $args );
 		while ( $loop->have_posts() ) : $loop->the_post();
 ?>
-<div class="container">
-		<div class="col-lg-4">
-		<div class="title"><?php the_title();?></div>
-		<div><?php the_post_thumbnail();?></div>
-		<div class="price"><p>Price $</p><?php the_field('price',$post->ID);?></div>
+
+		<div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="product-item">
+				<?php $id = get_the_ID();?>
+		<div class="title"><?php if($id==63){
+		?><img class="img-responsive pdf" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/pdf.png"><?php } else {?>
+		<img class="img-responsive book" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/book.png"><?php }?><?php the_title();?></div>
+		<div class="product-images"><?php the_post_thumbnail();?></div>
+		<div class="price"><p>Price $ <?php the_field('price',$post->ID);?></p></div>
 		<div><?php //the_field('pdf_book',$loop->ID);?></div>
+        <div class="product-btn">
 		<input type="hidden" value="<?php the_field('price',$post->ID);?>" class="price_section">
-		<button class="view-thesis-btn demo_<?php echo $post->ID; ?>" id="demo_<?php echo $post->ID; ?>" onclick="show_check(this.id);" >Buy Now</button>
-		</div>
-</div>
+		<button class="view-thesis-btn demo_<?php echo $post->ID; ?>" id="demo_<?php echo $post->ID; ?>" onclick="show_check(this.id);" >Buy Now</button></div></div>
+		</div> 
+
 <?php
 		endwhile;
 ?>
+	</div>
+</div>
+    </div>
 <!-- Button trigger modal -->
 <!-- Modal -->
 <form id="final_payment_paypal" name="final_payment_paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
@@ -57,7 +68,7 @@ get_header();
                        <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Form
+                    
                 </h4>
             </div>
             
@@ -160,18 +171,14 @@ get_header();
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Sign in</button>
+                      <button type="submit" class="btn btn-default">PAY NOW</button>
                     </div>
                   </div>
                 </form>
             </div>
             
             <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default"
-                        data-dismiss="modal">
-                            Close
-                </button>
+         
             </div>
         </div>
     </div>
@@ -204,8 +211,10 @@ jQuery(function($) {
 				},
 				phone: {
 					required: true,
-				    maxlength: 20
-					
+				    maxlength: 20	
+				},
+				address: {
+					required: true
 				},
                 country: {
 					required: true
@@ -238,7 +247,7 @@ jQuery(function($) {
 			//price:price,
 			success: function(data)
 			{
-				alert(data);
+				//alert(data);
 				var post_id_final = jQuery(".selected_product").val();
 				//alert(post_id_final);
 				if(post_id_final==61)

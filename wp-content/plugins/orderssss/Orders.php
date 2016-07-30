@@ -64,9 +64,10 @@ foreach( $wpdb->get_results("SELECT * FROM `im_formdata` WHERE `status` = 1 ORDE
 <td><?php echo $row->id; ?></td>
 <td><?php echo $row->name; ?></td>
 <td><?php echo $row->email; ?></td>
-<td>$<?php //echo $row->price; ?></td>
+<td>$<?php echo $row->amount; ?></td>
 <td><div class="alert alert-success"><?php echo $row->order_status; ?></div></td>
-<td><a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $row->id; ?>^<?php echo $row->name; ?>^<?php echo $row->email; ?>^<?php echo $row->address; ?>^<?php //echo $row->suburb; ?>^<?php echo $row->pin; ?>^<?php echo $row->phone; ?>^<?php //echo //$row->comments; ?>^<?php //echo $row->name_quantity; ?>^<?php echo $row->amount; ?>^<?php //echo $row->Transection_id; ?>^<?php echo $date = date('j F Y'); ?>^<?php //echo $row->start_date; ?>^<?php //echo $row->end_date; ?>">view Order details</a></td>
+<td><a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $row->id; ?>^<?php echo $row->name; ?>^<?php echo $row->email; ?>^<?php echo $row->address; ?>^<?php echo $row->city; ?>^<?php echo $row->pin; ?>^<?php echo $row->phone; ?>^<?php //echo //$row->comments; ?>^<?php //echo $row->name_quantity; ?>^<?php echo $row->amount; ?>^<?php //echo $row->Transection_id; ?>^<?php $date = $row->orderdate;
+echo date('j F Y', strtotime($date)); ?>^">view Order details</a></td>
 </tr>
 	<?php $i++; }
 	?>
@@ -87,6 +88,7 @@ foreach( $wpdb->get_results("SELECT * FROM `im_formdata` WHERE `status` = 1 ORDE
 		<tr><th>Name of Person</th><td class="name"></td></tr>
 		<tr><th>Email Address</th><td class="email_id"></td></tr>
 		<tr><th>Address</th><td class="address"></td></tr>
+		<tr><th>City</th><td class="suburb"></td></tr>
 		<tr><th>Postcode</th><td class="postcode"></td></tr>
 		<tr><th>Phone Number</th><td class="phone"></td></tr>
 		<tr><th>Price</th><td class="Price"></td ></tr>
